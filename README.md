@@ -11,6 +11,26 @@ A comprehensive web-based platform for reporting and managing security incidents
 - Protection against SQL injection, XSS, and CSRF attacks
 - Admin middleware for secure access control
 
+
+
+### Permission Matrix
+
+| Action | Normal User | Admin |
+|--------|-------------|-------|
+| Create Incident | ✅ | ✅ |
+| View Own Incidents | ✅ | ✅ |
+| View Assigned Incidents | ✅ | ✅ |
+| View All Incidents | ❌ | ✅ |
+| Edit Own Incidents | ✅ | ✅ |
+| Edit Others' Incidents | ❌ | ✅ |
+| Comment on Own Incidents | ✅ | ✅ |
+| Comment on Assigned Incidents | ✅ | ✅ |
+| Comment on Any Incident | ❌ | ✅ |
+| Assign Incidents | ❌ | ✅ |
+| Update Status | ❌ | ✅ |
+| View Admin Dashboard | ❌ | ✅ |
+
+
 ### 📊 Database Design
 - **Users Table**: id, name, email, password, role (user/admin), timestamps
 - **Incidents Table**: id, user_id, title, description, severity, status, assigned_to, timestamps
