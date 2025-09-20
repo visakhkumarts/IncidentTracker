@@ -172,13 +172,6 @@ The application will be available at: `http://localhost:8000`
 - Email: `admin@example.com`
 - Password: `password`
 
-**Regular User Account:**
-- Email: `john@example.com`
-- Password: `password`
-
-#### Additional Test Accounts
-- `jane@example.com` / `password`
-- `bob@example.com` / `password`
 
 
 
