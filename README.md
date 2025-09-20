@@ -31,7 +31,7 @@ A comprehensive web-based platform for reporting and managing security incidents
 | View Admin Dashboard | ❌ | ✅ |
 
 
-### 📊 Database Design
+### 📊 Database Design details
 - **Users Table**: id, name, email, password, role (user/admin), timestamps
 - **Incidents Table**: id, user_id, title, description, severity, status, assigned_to, timestamps
 - **Incident Comments Table**: id, incident_id, user_id, comment, timestamps
