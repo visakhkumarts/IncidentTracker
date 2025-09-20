@@ -47,7 +47,7 @@ class IncidentController extends Controller
         $sortOrder = $request->get('sort_order', 'desc');
         $query->orderBy($sortBy, $sortOrder);
 
-        $incidents = $query->paginate(10);
+        $incidents = $query->paginate(10)->appends(request()->query());
 
         return view('incidents.index', compact('incidents'));
     }
