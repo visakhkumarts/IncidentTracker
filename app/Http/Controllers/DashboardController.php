@@ -38,7 +38,17 @@ class DashboardController extends Controller
                       ->orWhere('assigned_to', $user->id);
             })->where('status', 'open')->count();
             
-            return view('dashboard.user', compact('incidents', 'totalIncidents', 'openIncidents'));
+            $inProgressIncidents = Incident::where(function ($query) use ($user) {
+                $query->where('user_id', $user->id)
+                      ->orWhere('assigned_to', $user->id);
+            })->where('status', 'in-progress')->count();
+            
+            $resolvedIncidents = Incident::where(function ($query) use ($user) {
+                $query->where('user_id', $user->id)
+                      ->orWhere('assigned_to', $user->id);
+            })->where('status', 'resolved')->count();
+            
+            return view('dashboard.user', compact('incidents', 'totalIncidents', 'openIncidents', 'inProgressIncidents', 'resolvedIncidents'));
         }
     }
 }
