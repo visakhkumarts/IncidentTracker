@@ -13,7 +13,7 @@ A comprehensive web-based platform for reporting and managing security incidents
 
 
 
-### Permission Matrix
+### Permission Matrix details
 
 | Action | Normal User | Admin |
 |--------|-------------|-------|
