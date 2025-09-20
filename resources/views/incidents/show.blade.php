@@ -6,37 +6,37 @@
 <div class="max-w-6xl mx-auto space-y-6">
     <!-- Incident Header -->
     <div class="bg-white shadow rounded-lg">
-        <div class="px-6 py-4 border-b border-gray-200">
-            <div class="flex justify-between items-start">
-                <div>
-                    <h1 class="text-2xl font-bold text-gray-900 mb-2">{{ $incident->title }}</h1>
-                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+        <div class="px-4 sm:px-6 py-4 border-b border-gray-200">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start space-y-4 sm:space-y-0">
+                <div class="flex-1 min-w-0">
+                    <h1 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 break-words">{{ $incident->title }}</h1>
+                    <div class="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 text-sm text-gray-500">
                         <span>Reported by {{ $incident->user->name }}</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span>{{ $incident->created_at->format('M d, Y \a\t g:i A') }}</span>
                         @if($incident->updated_at != $incident->created_at)
-                            <span>•</span>
+                            <span class="hidden sm:inline">•</span>
                             <span>Updated {{ $incident->updated_at->format('M d, Y \a\t g:i A') }}</span>
                         @endif
                     </div>
                 </div>
-                <div class="flex items-center space-x-2">
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
                     @if($incident->canBeUpdatedBy(Auth::user()))
                         <a href="{{ route('incidents.edit', $incident) }}" 
-                           class="bg-yellow-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-yellow-700">
+                           class="bg-yellow-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-yellow-700 text-center">
                             <i class="fas fa-edit mr-1"></i>Edit
                         </a>
                     @endif
                     <a href="{{ route('incidents.index') }}" 
-                       class="bg-gray-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
+                       class="bg-gray-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 text-center">
                         <i class="fas fa-arrow-left mr-1"></i>Back to List
                     </a>
                 </div>
             </div>
         </div>
         
-        <div class="px-6 py-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="px-4 sm:px-6 py-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Severity</label>
                     <span class="px-3 py-1 inline-flex text-sm font-semibold rounded-full
