@@ -5,7 +5,7 @@ A comprehensive web-based platform for reporting and managing security incidents
 ## Features
 
 ### 🔐 Authentication & Security
-- Manual registration and login system
+- Manual registration and login system 
 - Password hashing for security
 - Role-based access control (User/Admin)
 - Protection against SQL injection, XSS, and CSRF attacks
