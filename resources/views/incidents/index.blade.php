@@ -215,9 +215,7 @@
             
             <!-- Pagination -->
             <div class="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
-                <div class="flex justify-center">
-                    {{ $incidents->links() }}
-                </div>
+                {{ $incidents->links() }}
             </div>
         @else
             <div class="text-center py-8 sm:py-12 px-4">
